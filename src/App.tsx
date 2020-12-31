@@ -41,8 +41,21 @@ const App = () => {
     if (!gameOver) {
       // user's answer
       const answer = e.currentTarget.value;
+      // check answer against correct answer - will be a boolean
+      const correct = questions[number].correct_answer === answer;
+      // add score if answer is correct (true)
+      if (correct) setScore(prev => prev + 1);
+      // save answer in the array for user answers
+        // es6 syntax - don't need key/value pairing if key and value are same
+      const answerObject = {
+        question: questions[number].question,
+        answer,
+        correct,
+        correctAnswer: questions[number].correct_answer
+      };
+      setUserAnswers(prev => [...prev, answerObject]);
     }
-  }
+  };
 
   const nextQuestion = () => {
 
