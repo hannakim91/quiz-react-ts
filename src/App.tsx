@@ -38,7 +38,10 @@ const App = () => {
   }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
-
+    if (!gameOver) {
+      // user's answer
+      const answer = e.currentTarget.value;
+    }
   }
 
   const nextQuestion = () => {
