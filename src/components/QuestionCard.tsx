@@ -21,7 +21,7 @@ const QuestionCard: React.FC<Props> = ({question, answers, callback, userAnswer,
     <div>
       {answers.map(answer => (
         <div key={answer}>
-          <button disabled={userAnswer} value={answer} onClick={callback}>
+          <button disabled={!!userAnswer} value={answer} onClick={callback}>
             <span dangerouslySetInnerHTML={{ __html: answer }} />
           </button>
         </div>
@@ -31,5 +31,6 @@ const QuestionCard: React.FC<Props> = ({question, answers, callback, userAnswer,
 );
 
 //dangerously set innerHTML? point of caution - don't know what will be injected from API necessarily, but in this case we are probably fine
+// button can also be displayed as a ternary - userAnswer ? true false - instead of !! syntax
 
 export default QuestionCard;
