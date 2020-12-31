@@ -24,7 +24,19 @@ const App = () => {
   console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
 
   const startTrivia = async () => {
-
+    // trigger api fetch and change GameOver to false
+    setLoading(true);
+    setGameOver(false);
+    // fetch and add questions to state
+    const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
+    setQuestions(newQuestions);
+    // error handling would be good to implement
+    // reset everything for fresh game
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0);
+    // loading is complete
+    setLoading(false);
   }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
