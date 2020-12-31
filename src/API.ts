@@ -1,4 +1,4 @@
-import { shuffleArray, shuffleArray } from './utils';
+import { shuffleArray } from './utils';
 
 export enum Difficulty {
   EASY = "easy",
