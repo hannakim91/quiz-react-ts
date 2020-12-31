@@ -28,6 +28,6 @@ const QuestionCard: React.FC<Props> = ({question, answers, callback, userAnswer,
   </div>
 );
 
-//dangerously set innerHTML? don't know what will be injected necessarily
+//dangerously set innerHTML? point of caution - don't know what will be injected from API necessarily, but in this case we are probably fine
 
 export default QuestionCard;
