@@ -10,6 +10,10 @@ function App = () => {
 
   }
 
+  const nextQuestion = () => {
+    
+  }
+
   return (
     <div className="App">
       Quiz
