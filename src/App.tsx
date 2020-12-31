@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Components
-import QuestionCard from './components/QuestionCard.tsx';
+import QuestionCard from './components/QuestionCard';
 
 const App = () => {
 
