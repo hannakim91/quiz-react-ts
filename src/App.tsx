@@ -20,9 +20,7 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
-
+  
   const startTrivia = async () => {
     // trigger api fetch and change GameOver to false
     setLoading(true);
@@ -31,7 +29,7 @@ const App = () => {
     const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
     setQuestions(newQuestions);
     // error handling would be good to implement
-    // reset everything for fresh game
+    // reset everything for fresh game -- each setState call will trigger API call - only if there is a change; even so, fine for small app like this
     setScore(0);
     setUserAnswers([]);
     setNumber(0);
